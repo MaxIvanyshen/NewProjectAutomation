@@ -12,10 +12,10 @@ driver = webdriver.Chrome('./chromedriver')
 driver.get("https://www.github.com/login")
 
 login = driver.find_element_by_name("login")
-login.send_keys(your login in "")
+login.send_keys("your github login")
 
 password = driver.find_element_by_name("password")
-password.send_keys(your password in "")
+password.send_keys("your github password")
 
 loginBtn = driver.find_element_by_name("commit")
 loginBtn.click()
@@ -44,7 +44,7 @@ text = pyperclip.paste()
 command = "git clone " + text
 
 
-os.chdir("D:\Coding\Projects")
+os.chdir("directory where to clone your repository")
 os.system(command)
 
 driver.close()
