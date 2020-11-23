@@ -1,7 +1,7 @@
 # NewProjectAutomation
 ## General
 This is an app I wrote to automate my project creating process<br/>
-App logs in to your github account, creates new repository with name you`ve typed in and clones it to the repository you`ve typed in
+App logs in to your github account, creates new repository with name you have typed in and clones it to the repository you have typed in
 
 ## How to run
 Install Python3 <br/>
