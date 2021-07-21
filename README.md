@@ -11,5 +11,5 @@ Open cmd in the root folder of the project<br/>
 Open 'main.py' file in the text editor and change variables 'chromedriver_directory, username, passw, repo_directory'
 Run 'py main.py' or 'python main.py' in the cmd
 
-##Warning
+## Warning
 In the end there might be some errors, but the app works correctly
