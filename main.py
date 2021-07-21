@@ -5,10 +5,10 @@ import os
 import subprocess
 import pyperclip
 
-chromedriver_directory = '/mnt/d/Coding/Projects/NewProjectAutomation/chromedriver.exe'
-username = 'MaxIvanyshen'
-passw = "gitmax2020"
-repo_directory = '/mnt/d/Coding/Projects'
+chromedriver_directory = "<WHERE YOU HAVE YOUR CHROMEDRIVER FILE>"
+username = "<YOUR GITHUB USERNAME>"
+passw = "<YOUR GITHUB PASSWORD>"
+repo_directory = "<WHERE NEW REPOSITORY WILL BE COPIED>"
 
 print("Enter project name: ")
 projectName = input()
