@@ -6,6 +6,7 @@ App logs in to your github account, creates new repository with name you have ty
 ## How to run
 Install Python3 <br/>
 Open cmd and write 'pip install selenium'<br/>
+Then write 'pip install pyperclip'<br/>
 Open cmd in the root folder of the project<br/>
-Open 'main.py' file in the text editor and type in your login and password for github in the variable initialization and to write the path, where the app will clone repository to
-Run 'py main.py' in the cmd
+Open 'main.py' file in the text editor and change variables 'chromedriver_directory, username, password, repo_directory'
+Run 'py main.py' or 'python main.py' in the cmd

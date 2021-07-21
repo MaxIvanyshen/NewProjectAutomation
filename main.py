@@ -3,18 +3,24 @@ from selenium.webdriver.common.keys import Keys
 import time
 import os
 import subprocess
+import pyperclip
+
+chromedriver_directory = "<WHERE YOU HAVE YOUR CHROMEDRIVER FILE>"
+username = "<YOUR GITHUB USERNAME>"
+password = "<YOUR GITHUB PASSWORD>"
+repo_directory = "<WHERE NEW REPOSITORY WILL BE COPIED>"
 
 print("Enter project name: ")
 projectName = input()
 
-driver = webdriver.Chrome('./chromedriver')
+driver = webdriver.Chrome(chromedriver_directory)
 driver.get("https://www.github.com/login")
 
 login = driver.find_element_by_name("login")
-login.send_keys("your github login")
+login.send_keys(username)
 
 password = driver.find_element_by_name("password")
-password.send_keys("your github password")
+password.send_keys(password)
 
 loginBtn = driver.find_element_by_name("commit")
 loginBtn.click()
@@ -31,10 +37,10 @@ submitBtn = driver.find_element_by_css_selector("#new_repository > div.js-with-p
 time.sleep(2)
 submitBtn.click()
 
-codeBtn = driver.find_element_by_css_selector("#js-repo-pjax-container > div.container-xl.clearfix.new-discussion-timeline.px-3.px-md-4.px-lg-5 > div > div.gutter-condensed.gutter-lg.flex-column.flex-md-row.d-flex > div.flex-shrink-0.col-12.col-md-9.mb-4.mb-md-0 > div.file-navigation.mb-3.d-flex.flex-items-start > span > get-repo > details > summary")
+codeBtn = driver.find_element_by_css_selector("#repo-content-pjax-container > div > div.gutter-condensed.gutter-lg.flex-column.flex-md-row.d-flex > div.flex-shrink-0.col-12.col-md-9.mb-4.mb-md-0 > div.file-navigation.mb-3.d-flex.flex-items-start > span > get-repo > details > summary")
 codeBtn.click()
 
-copyBtn = driver.find_element_by_css_selector("#js-repo-pjax-container > div.container-xl.clearfix.new-discussion-timeline.px-3.px-md-4.px-lg-5 > div > div.gutter-condensed.gutter-lg.flex-column.flex-md-row.d-flex > div.flex-shrink-0.col-12.col-md-9.mb-4.mb-md-0 > div.file-navigation.mb-3.d-flex.flex-items-start > span > get-repo > details > div > div > div:nth-child(1) > div > tab-container > div:nth-child(2) > div > div > clipboard-copy")
+copyBtn = driver.find_element_by_css_selector("#repo-content-pjax-container > div > div.gutter-condensed.gutter-lg.flex-column.flex-md-row.d-flex > div.flex-shrink-0.col-12.col-md-9.mb-4.mb-md-0 > div.file-navigation.mb-3.d-flex.flex-items-start > span > get-repo > details > div > div > div:nth-child(1) > div > tab-container > div:nth-child(2) > div > div > clipboard-copy")
 copyBtn.click()
 
 driver.close()
@@ -43,7 +49,7 @@ text = pyperclip.paste()
 command = "git clone " + text
 
 
-os.chdir("directory where to clone your repository")
+os.chdir(repo_directory)
 os.system(command)
 
 driver.close()
