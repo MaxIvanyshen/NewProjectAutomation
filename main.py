@@ -6,7 +6,7 @@ import sys
 
 #change these variables
 username = "<YOUR GITHUB USERNAME>"
-passw = "<YOUR GITHUB PASSWORD"
+passw = "<YOUR GITHUB PASSWORD>"
 
 #needed variables
 chromedriver_directory = sys.argv[1]
